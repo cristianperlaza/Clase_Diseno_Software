@@ -10,9 +10,9 @@ def generate_id(length=8):
 
 class SoporteTicket:
 
-    def __init__(self, customer, issue):
+    def __init__(self, cliente, issue):
         self.id = generate_id()
-        self.customer = customer
+        self.cliente = cliente
         self.issue = issue
 
 
@@ -41,8 +41,8 @@ class AtencionAlCliente:
     def __init__(self):
         self.tickets = []
 
-    def create_ticket(self, customer, issue):
-        self.tickets.append(SoporteTicket(customer, issue))
+    def create_ticket(self, cliente, issue):
+        self.tickets.append(SoporteTicket(cliente, issue))
 
     def process_tickets(self, ordering: Callable[[List[SoporteTicket]], List[SoporteTicket]]):
         # create the ordered list
@@ -60,7 +60,7 @@ class AtencionAlCliente:
     def process_ticket(self, ticket: SoporteTicket):
         print("==================================")
         print(f"Processing ticket id: {ticket.id}")
-        print(f"Customer: {ticket.customer}")
+        print(f"cliente: {ticket.cliente}")
         print(f"Issue: {ticket.issue}")
         print("==================================")
 
